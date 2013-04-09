@@ -1,0 +1,11 @@
+<h1>All Questions</h1>
+
+<% @questions.each do |q| %>
+  <ul class="all-statements">
+    <li><%= q.statement.humanize %></li>
+    <li><%= link_to raw('<i class="icon-edit"></i> Edit'), '#', class: "btn" %></li>
+    <li><%= link_to '<i class="icon-minus icon-white"></i> Delete'.html_safe, '#', class: "btn btn-danger" %></li>
+  </ul>
+<% end %>
+
+

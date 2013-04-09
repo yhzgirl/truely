@@ -1,0 +1,7 @@
+<%= form_for @question do |f| %>
+  <%= f.label :statement %>
+  <%= f.text_field :statement, placeholder: "Truthy/non-truthy statement ... ", autofocus: true %>
+
+  <%= f.submit "Add", class: "btn btn-primary" %>
+
+<% end %>
