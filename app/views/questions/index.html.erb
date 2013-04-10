@@ -1,5 +1,7 @@
 <h1>All Questions</h1>
 
+<%= will_paginate %>
+
 <% @questions.each do |q| %>
   <ul class="all-statements">
     <li><%= q.statement.humanize %></li>
@@ -8,4 +10,5 @@
   </ul>
 <% end %>
 
+<%= will_paginate %>
 

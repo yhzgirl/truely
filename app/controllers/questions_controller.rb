@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   def index
-    @questions = Question.all
+    @questions = Question.paginate(page: params[:page])
   end
 
   def new
@@ -20,8 +20,12 @@ class QuestionsController < ApplicationController
 
   def edit
     @question = Question.find(params[:id])
+  end
+
+  def update
+    @question = Question.find(params[:id])
     if @question.update_attributes(params[:question])
-      redirect_to questions_path, :notice => "Question has been updated"
+      redirect_to questions_path, :notice => "The question has been updated"
     end
   end
 
