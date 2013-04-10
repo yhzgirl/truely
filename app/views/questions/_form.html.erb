@@ -2,6 +2,21 @@
   <%= f.label :statement %>
   <%= f.text_field :statement, placeholder: "Truthy/non-truthy statement ... ", autofocus: true %>
 
+  <%#= f.label :true_or_false, "This statement is ..." %>
+  <%#= f.radio_field :true_or_false %>
+
+<%= f.radio_button :true_or_false, 1, :checked => true %>
+<%= f.label :true_or_false, 'I believe it\'s True' %>
+<%= f.radio_button :true_or_false, 0 %>
+<%= f.label :true_or_false, 'I believe it\'s False' %>
+
+<div class="btn-group" data-toggle="buttons-radio">
+  <button type="button" class="btn btn-primary">Left</button>
+  <button type="button" class="btn btn-primary">Middle</button>
+  <button type="button" class="btn btn-primary">Right</button>
+</div>
+
+
   <%= f.submit "Add", class: "btn btn-primary" %>
 
 <% end %>

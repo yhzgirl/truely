@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Truely Is That Right</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -22,6 +23,7 @@
         <%= link_to "Truely is that Right?", root_path, class: "brand" %>
         <div class="container nav-collapse">
           <ul class="nav">
+            <li><%= link_to "Play", "/path2"  %></li>
             <li><%= link_to "Add a Question", new_question_path  %></li>
             <li><%= link_to "?", "/path2"  %></li>
           </ul>
@@ -42,7 +44,7 @@
         <%= msg %>
       </div>
     <% end %>
-      <div class="row">
+      <div class="row-fluid">
         <div class="span12">
           <%= yield %>
         </div>
