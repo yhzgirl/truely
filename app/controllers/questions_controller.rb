@@ -10,7 +10,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(params[:question])
     if @question.save
-      flash[:success] = "Your question was added"
+      flash[:notice] = "Your question was added"
       redirect_to questions_path
     else
       flash[:error] = "Something went wrong, please try again"
@@ -19,9 +19,20 @@ class QuestionsController < ApplicationController
   end
 
   def edit
+    @question = Question.find(params[:id])
+    if @question.update_attributes(params[:question])
+      redirect_to questions_path, :notice => "Question has been updated"
+    end
   end
 
   def show
     @question = Question.find(params[:id])
+  end
+
+  def destroy
+    @question = Question.find(params[:id])
+    if @question.destroy
+      redirect_to questions_path, :notice => "Question deleted"
+    end
   end
 end
