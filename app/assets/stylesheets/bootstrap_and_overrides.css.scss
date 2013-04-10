@@ -8,5 +8,10 @@ body { padding-top: 60px; }
   }
 }
 
+.radio-btn #question_true_or_false_0, .radio-btn #question_true_or_false_1 {
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+}
 
 
