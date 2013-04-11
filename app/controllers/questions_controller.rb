@@ -9,6 +9,12 @@ class QuestionsController < ApplicationController
   def new
     # debugger
     @question = Question.new
+    if current_user
+      render :layout => false
+    # alternative way to handle not doubling up on footer
+    # else
+    #   render :not_logged_in, :layout => false  -this requires creation of _not_logged_in.html.erb with a message
+    end
   end
 
   def create
