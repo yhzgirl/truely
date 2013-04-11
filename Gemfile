@@ -8,6 +8,7 @@ gem 'rails', '3.2.12'
 gem 'pg'
 gem 'thin'
 
+# External Authentication gems
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'

@@ -28,9 +28,14 @@
             <li><%= link_to "?", "/path2"  %></li>
           </ul>
           <ul class="nav pull-right">
-            <li><%= link_to "Sign in with: ", '#' %></li>
-            <li><%= link_to(image_tag('facebook_32.png'), '#') %></li>
-            <li><%= link_to image_tag('twitter_32.png'), '#' %></li>
+            <% if current_user %>
+              Signed in as <strong><%= current_user.name %></strong>!
+              <li><%= link_to "Sign out", signout_path %></li>
+            <% else %>
+              <li><%= link_to "Sign in with: ", '#' %></li>
+              <li><%= link_to(image_tag('facebook_32.png'), "/auth/facebook", id: "fb_sign_in") %></li>
+              <li><%= link_to image_tag('twitter_32.png'), "/auth/twitter" %></li>
+            <% end %>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -52,7 +57,7 @@
       </div><!--/row-->
 
     <footer>
-      <p>&copy; JG Smith 2013</p>
+      <p>&copy; M & M 2013</p>
     </footer>
 
   </div>
