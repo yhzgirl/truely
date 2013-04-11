@@ -26,9 +26,7 @@ $(function() {
   $(document).on('click', "#btn-add-question", function(e) {
     e.preventDefault();
     var question = $('#question_statement').val();
-    var tf = $('input[name="question[true_or_false]"]:radio').val();
-    alert("tf = " + tf);
-
+    var tf = $('input[name="question[true_or_false]"]:checked').val();
     $.post('/questions',
           {question: {statement: question, true_or_false: tf} } ); 
   });
