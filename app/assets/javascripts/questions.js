@@ -6,7 +6,7 @@ function isLoggedIn() {
   return ($('#user-id').length > 0);
 }
 
-$('document').ready(function() {
+$(function() {
   $("#new_question").click(function(e) {
     $('.alert').alert('close');
     e.preventDefault();
@@ -19,6 +19,18 @@ $('document').ready(function() {
       $('.row-fluid').prepend('<div class="alert alert-error fade in ">' + close_btn + 'You need to be logged in to ask a question</div>');
     }
     
+  });
+// });
+
+// $(function() {
+  $(document).on('click', "#btn-add-question", function(e) {
+    e.preventDefault();
+    var question = $('#question_statement').val();
+    var tf = $('input[name="question[true_or_false]"]:radio').val();
+    alert("tf = " + tf);
+
+    $.post('/questions',
+          {question: {statement: question, true_or_false: tf} } ); 
   });
 });
 
