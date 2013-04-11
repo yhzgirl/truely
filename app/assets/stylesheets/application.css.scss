@@ -11,8 +11,16 @@
  *= require_self
  *= require_tree .
  */
+
+$navbarHeight: 70px;
+$grayblue: #788795;
+$gray:#caccc9;
+$navbarBackground: $grayblue;
+
 @import "bootstrap";
 @import "bootstrap-responsive";
 $fontAwesomePath: '/assets';
 @import "font-awesome";
 $baseFontFamily: 'FontAwesome';
+
+
