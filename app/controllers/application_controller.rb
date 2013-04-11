@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  def authorized
+    redirect_to root_path unless current_user
+  end
+
   private
 
     def current_user

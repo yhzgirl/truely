@@ -1,9 +1,13 @@
 class QuestionsController < ApplicationController
+  
+  before_filter :authorized, only: [:new, :create]
+
   def index
     @questions = Question.paginate(page: params[:page])
   end
 
   def new
+    # debugger
     @question = Question.new
   end
 
