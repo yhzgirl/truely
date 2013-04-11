@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   def authorized
-    redirect_to root_path unless current_user
+    redirect_to root_path, :notice => "You need to be signed in to add a question" unless current_user
   end
 
   private
