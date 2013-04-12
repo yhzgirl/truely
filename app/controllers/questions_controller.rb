@@ -5,27 +5,19 @@ class QuestionsController < ApplicationController
   respond_to :html, :json
 
   def index
-
     @questions = Question.paginate(page: params[:page])
+    # this is now in application controller as a proc so its system wide for AJAX (xhr) calls
+    # render :layout => false if request.xhr?
   end
 
   def new
-    # debugger
     @question = Question.new
-    if current_user
-      render :layout => false
-    # alternative way to handle not doubling up on footer
-    # else
-    #   render :not_logged_in, :layout => false  -this requires creation of _not_logged_in.html.erb with a message
-    end
   end
 
   def create
     @question = Question.new(params[:question])
     if @question.save
-      
       flash[:notice] = "Your question was added"
-      # redirect_to questions_path
       respond_with(@question)
     else
       flash[:error] = "Something went wrong, please try again"

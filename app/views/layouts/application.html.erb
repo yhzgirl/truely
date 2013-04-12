@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Truely Is That Right</title>
+  <title>London Fact or Fiction</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
@@ -24,14 +24,11 @@
     <% end %>
       <div class="row-fluid">
         <div class="span12" id="main-page">
-
           <%= yield %>
         </div>
-
       </div><!--/row-->
-      
+      <hr>
       <%= render 'layouts/footer' %>
-
   </div>
 </body>
 </html>
