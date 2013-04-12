@@ -1,5 +1,7 @@
 TruelyIsThatRight::Application.routes.draw do
 
+  get "responses/new"
+
   resources :questions
 
   match '/auth/:provider/callback', :to => 'sessions#create' 

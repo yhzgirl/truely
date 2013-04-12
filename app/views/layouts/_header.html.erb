@@ -12,16 +12,16 @@
         <%= link_to "London Fact or Fiction", root_path, class: "brand" %>
         <div class="container nav-collapse">
           <ul class="nav">
-            <li><%= link_to "Play", "/path2"  %></li>
-            <li><%= link_to "Add a Question", new_question_path, id: "add_fact_or_fiction" %></li>
+            <li><%= link_to raw('<i class="icon-play"></i> Play'), responses_new_path, id: "start_new_game" %></li>
+            <li><%= link_to raw('<i class="icon-plus"></i>Add a Question'), new_question_path, id: "add_fact_or_fiction" %></li>
           </ul>
           <ul class="nav pull-right">
             <% if current_user %>
-              <li><%= link_to "Signed in as #{current_user.name}", signout_path %></li>
+              <li><%= link_to raw("<i class='icon-facebook-sign'></i> #{current_user.name}"), signout_path %></li>
               <li><%= link_to "Sign out", signout_path %></li>
             <% else %>
-              <li><%= link_to "Sign in with: ", '#' %></li>
-              <li><%= link_to(image_tag('facebook_32.png'), "/auth/facebook", id: "fb_sign_in") %></li>
+              <li><%= link_to "Sign in: ", '#' %></li>
+              <li><%= link_to raw('<i class="icon-facebook-sign icon-2x"></i>'), "/auth/facebook", id: "fb_sign_in" %></li>
               <li><%#= link_to image_tag('twitter_32.png'), "/auth/twitter" %></li>
             <% end %>
           </ul>

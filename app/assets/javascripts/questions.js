@@ -9,7 +9,6 @@ function isLoggedIn() {
 $(function() {
   $(document).on('click', "#add_fact_or_fiction", function(e) {
     e.preventDefault();
-    console.log('fired');
     $('.alert').alert('close');
     // start our Ajax here to load questions/new which renders a new question form
     if (isLoggedIn()) {
