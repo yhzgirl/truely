@@ -4,13 +4,10 @@
   </br>
 
   <div class="radio-btn" data-toggle="buttons-radio">
-    <%= f.radio_button :true_or_false, 1 %>
-    <%= f.label :true_or_false_1, 'I believe it\'s True' %>
+    <%= f.radio_button :true_or_false, true %><%= f.label :true_or_false, 'Fact' %>
+
+    <%= f.radio_button :true_or_false, false %> <%= f.label :true_or_false, 'Fiction' %>
   </div>
-  <div class="radio-btn" data-toggle="buttons-radio">
-    <%= f.radio_button :true_or_false, 0 %>
-    <%= f.label :true_or_false_0, 'I believe it\'s False' %>
-  </div></br>
 
   <%= f.submit "Save", class: "btn btn-primary", id: "btn-add-question" %>
 <% end %>

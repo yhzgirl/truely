@@ -10,7 +10,7 @@ class Question < ActiveRecord::Base
   validates :statement, length: { minimum: 5, maximum: 255 }
   validates :statement, uniqueness: { case_sensitive: true }
   
-  self.per_page = 3
+  self.per_page = 15
 
   private
 
