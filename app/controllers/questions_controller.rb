@@ -5,6 +5,7 @@ class QuestionsController < ApplicationController
   respond_to :html, :json
 
   def index
+
     @questions = Question.paginate(page: params[:page])
   end
 
@@ -22,10 +23,10 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(params[:question])
     if @question.save
+      
       flash[:notice] = "Your question was added"
-      redirect_to questions_path
-      respond_with(@question, location: questions_url)
-
+      # redirect_to questions_path
+      respond_with(@question)
     else
       flash[:error] = "Something went wrong, please try again"
       render :new
