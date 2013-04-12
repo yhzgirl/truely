@@ -3386,7 +3386,7 @@ input[type="submit"].btn.btn-mini {
   margin-left: -20px;
   font-size: 20px;
   font-weight: 200;
-  color: #636363;
+  color: #e5e5e5;
   text-shadow: 0 1px 0 #5c1821;
 }
 .navbar .brand:hover {
@@ -3537,10 +3537,11 @@ input[type="submit"].btn.btn-mini {
 .navbar .nav > li {
   float: left;
 }
+ // Change this if cannot override elsewhere
 .navbar .nav > li > a {
   float: none;
   padding: 10px 15px 10px;
-  color: #636363;
+  color: #cecece;
   text-decoration: none;
   text-shadow: 0 1px 0 #5c1821;
 }

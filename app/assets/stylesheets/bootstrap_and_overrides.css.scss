@@ -1,8 +1,11 @@
-body { padding-top: 120px; }
+// @import "bootstrap";
+@import "lavish";
+@import "bootstrap-responsive";
+$fontAwesomePath: '/assets';
+@import "font-awesome";
+$baseFontFamily: 'FontAwesome';
 
-.navbar .brand {
- font-size: 1.5em; 
-}
+body { padding-top: 60px; }
 
 // .navbar-inner {
 //   background-color: #2c2c2c; /* fallback color, place your own */
@@ -26,4 +29,16 @@ body { padding-top: 120px; }
     font-size: 1.6em;
   }
 }
+
+.main-h1-image-combined {
+   float: none;
+   margin-left: auto;
+   margin-right: auto;
+   text-align: center;
+}
+
+// Why doesn't this override only do the non-hovered 
+// .navbar .nav > li > a {
+//   color: #e5e5e5 !important;
+// }
 

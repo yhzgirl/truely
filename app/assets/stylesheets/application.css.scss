@@ -9,24 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require bootstrap_and_overrides
  */
 
-$navbarHeight: 70px;
-$grayblue: #788795;
-$gray:#caccc9;
-$navbarBackground: $grayblue;
 
-// @import "bootstrap";
-
-@import "lavish";
-
-
-
-@import "bootstrap-responsive";
-$fontAwesomePath: '/assets';
-@import "font-awesome";
-$baseFontFamily: 'FontAwesome';
 
 
 
