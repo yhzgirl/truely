@@ -2,6 +2,8 @@ class QuestionsController < ApplicationController
   
   before_filter :authorized, only: [:new, :create]
 
+  respond_to :html, :json
+
   def index
     @questions = Question.paginate(page: params[:page])
   end
@@ -22,6 +24,8 @@ class QuestionsController < ApplicationController
     if @question.save
       flash[:notice] = "Your question was added"
       redirect_to questions_path
+      respond_with(@question, location: questions_url)
+
     else
       flash[:error] = "Something went wrong, please try again"
       render :new
