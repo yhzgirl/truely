@@ -28,7 +28,11 @@ $(function() {
     var question = $('#question_statement').val();
     var tf = $('input[name="question[true_or_false]"]:checked').val();
     $.post('/questions',
-          {question: {statement: question, true_or_false: tf} } ); 
+          {question: {statement: question, true_or_false: tf} } )
+    // .success( function() {
+    //   var msg = 'Added Question';
+    //   Utilities.showFlashMessage(msg);
+    // }); 
   });
 });
 
