@@ -9,7 +9,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <%= link_to "Truely is that Right?", root_path, class: "brand" %>
+        <%= link_to "London Fact or Fiction", root_path, class: "brand" %>
         <div class="container nav-collapse">
           <ul class="nav">
             <li><%= link_to "Play", "/path2"  %></li>
@@ -17,7 +17,7 @@
           </ul>
           <ul class="nav pull-right">
             <% if current_user %>
-              Signed in as <strong><%= current_user.name %></strong>
+              <li><%= link_to "Signed in as #{current_user.name}", signout_path %></li>
               <li><%= link_to "Sign out", signout_path %></li>
             <% else %>
               <li><%= link_to "Sign in with: ", '#' %></li>
