@@ -5,8 +5,8 @@ class ResponsesController < ApplicationController
   respond_to :html, :json
 
   def new
-    # debugger
     @response = Response.new
+
   end
 
   def create
