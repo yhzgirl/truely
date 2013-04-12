@@ -1,6 +1,8 @@
 TruelyIsThatRight::Application.routes.draw do
 
-  get "responses/new"
+  resources :responses
+  # get "responses/new"
+  # post "responses"
 
   resources :questions
 
