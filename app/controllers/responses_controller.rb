@@ -6,14 +6,14 @@ class ResponsesController < ApplicationController
 
   def new
     @response = Response.new
-
+    @question = Question.random_question
   end
 
   def create
     # This is where we create the current_users response to the question asked
     @response = Response.new(params[:user_question_response])
     if @response.save
-      flash[:notice] = "Your response was added"
+      flash[:notice] = "Your response was recorded"
       respond_with(@response)
     else
       flash[:error] = "Something went wrong, please try again"

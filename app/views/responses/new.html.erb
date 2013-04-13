@@ -1,7 +1,11 @@
-<h1>Do you think this is fact or fiction?</h1>
+<h1>Is this fact or fiction?</h1>
 
 <%= form_for @response do |f| %>
 
+  <%= f.label :statement, @question.statement, class: "statement" %>
+
+  <%= f.submit "True", id: "true_response", class: "btn btn-success" %>
+  <%= f.submit "False", id: "false_response", class: "btn btn-danger" %>
 
 <% end %>
 
