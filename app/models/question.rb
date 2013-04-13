@@ -14,7 +14,7 @@ class Question < ActiveRecord::Base
   self.per_page = 15
 
   def self.random_question
-    Question.first
+    Question.first(order: 'RANDOM()')
   end
 
 
