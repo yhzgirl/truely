@@ -1,11 +1,13 @@
-<h1>Is this fact or fiction?</h1>
+<div class="flash-card">
+  <h1>Is this fact or fiction?</h1>
 
-<%= form_for @response do |f| %>
+  <%= form_for @response do |f| %>
 
-  <%= f.label :statement, @question.statement, class: "statement" %>
+    <%= f.label :statement, @question.statement, class: "statement" %>
 
-  <%= f.submit "True", id: "true_response", class: "btn btn-success" %>
-  <%= f.submit "False", id: "false_response", class: "btn btn-danger" %>
+    <%= f.submit "  Fact ", id: "true_response", class: "btn-large btn-response" %>
+    <%= f.submit "Fiction", id: "false_response", class: "btn-large btn-response" %>
 
-<% end %>
+  <% end %>
+</div>
 
