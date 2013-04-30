@@ -23,9 +23,9 @@ $(function() {
   $(document).on('click', "#btn-add-question", function(e) {
     e.preventDefault();
     var question = $('#question_statement').val();
-    var tf = $('input[name="question[true_or_false]"]:checked').val();
+    var tf = $('input[name="question[fact_or_fiction]"]:checked').val();
     $.post('/questions',
-          {question: {statement: question, true_or_false: tf} }, 'json' )
+          {question: {statement: question, fact_or_fiction: tf} }, 'json' )
     .success( function(data) {
       console.log(data);
       $("#main-page").load("/questions");

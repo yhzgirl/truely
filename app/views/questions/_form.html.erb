@@ -2,9 +2,9 @@
   <% f.label :statement %>
   <%= f.text_field :statement, placeholder: "Your London Fact or Fiction ", autofocus: true %>
   </br>
-  <div class='set-question'>
-    <%= f.radio_button :true_or_false, true %><%= f.label :true_or_false, 'Fact' %>
-    <%= f.radio_button :true_or_false, false %> <%= f.label :true_or_false, 'Fiction' %>
+  <div>
+    <%= f.radio_button :fact_or_fiction, true %><%= f.label :fact_or_fiction, 'Fact' %>
+    <%= f.radio_button :fact_or_fiction, false %> <%= f.label :fact_or_fiction, 'Fiction' %>
   </div>
   <%= f.submit "Save", class: "btn btn-primary", id: "btn-add-question" %>
 <% end %>

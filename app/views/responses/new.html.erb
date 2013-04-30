@@ -2,11 +2,13 @@
   <h2>Is this fact or fiction?</h2>
 
   <%= form_for @response do |f| %>
-    <p><%= f.label :statement, @question.statement, class: "statement" %></p>
+  
+    <h3 class='statement'><%= @question.statement %></h3>
+      <%= f.hidden_field :question_id, value: @question.id %>
 
     <div class="radio-btn" data-toggle="buttons-radio">
-      <%= f.submit "  Fact ", id: "true_response", class: "btn-large btn-response" %>
-      <%= f.submit "Fiction", id: "false_response", class: "btn-large btn-response" %>
+      <%= f.submit "  Fact ", id: "true", class: "btn-large btn-response" %>
+      <%= f.submit "Fiction", id: "false", class: "btn-large btn-response" %>
       </div>                      
   <% end %>
 </div>

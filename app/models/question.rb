@@ -1,5 +1,5 @@
 class Question < ActiveRecord::Base
-  attr_accessible :statement, :true_or_false
+  attr_accessible :statement, :fact_or_fiction
 
   has_many :responses
   has_many :users, through: :responses  
@@ -16,7 +16,6 @@ class Question < ActiveRecord::Base
   def self.random_question
     Question.first(order: 'RANDOM()')
   end
-
 
   private
 
