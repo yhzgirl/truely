@@ -1,13 +1,15 @@
 <div class="flash-card">
-  <h1>Is this fact or fiction?</h1>
+  <h2>Is this fact or fiction?</h2>
 
   <%= form_for @response do |f| %>
 
     <%= f.label :statement, @question.statement, class: "statement" %>
 
+  <div class="radio-btn" data-toggle="buttons-radio">
     <%= f.submit "  Fact ", id: "true_response", class: "btn-large btn-response" %>
     <%= f.submit "Fiction", id: "false_response", class: "btn-large btn-response" %>
-
+    </div>                      
   <% end %>
 </div>
+<%= link_to "Back", questions_path, class: "btn btn-primary" %>
 

@@ -3,10 +3,8 @@
   <%= f.text_field :statement, placeholder: "Your London Fact or Fiction ", autofocus: true %>
   </br>
 
-  <div class="radio-btn" data-toggle="buttons-radio">
     <%= f.radio_button :true_or_false, true %><%= f.label :true_or_false, 'Fact' %>
     <%= f.radio_button :true_or_false, false %> <%= f.label :true_or_false, 'Fiction' %>
-  </div>
 
   <%= f.submit "Save", class: "btn btn-primary", id: "btn-add-question" %>
-<% end %>
+<% end %> 

@@ -4,9 +4,9 @@
 
 <% @questions.each do |q| %>
   <ul class="all-statements">
-    <li><%= q.statement.humanize %></li>
+    <li><%= q.statement.humanize %></li><br>
     <li><%= link_to raw('<i class="icon-edit"></i> Edit'), edit_question_path(q), class: "btn" %></li>
-    <li><%= link_to '<i class="icon-minus icon-white"></i> Delete'.html_safe, q, method: :delete, confirm: 'Are you sure?', class: "btn btn-danger" %></li>
+    <li><%= link_to '<i class="icon-minus icon-white"></i> Delete'.html_safe, q, method: :delete, confirm: 'Are you sure?', class: "btn btn-danger" %></li><br>
   </ul>
 <% end %>
 
