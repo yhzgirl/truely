@@ -2,7 +2,7 @@
   <h2>Is this fact or fiction?</h2>
 
   <%= form_for @response do |f| %>
-  
+
     <h3 class='statement'><%= @question.statement %></h3>
       <%= f.hidden_field :question_id, value: @question.id %>
 

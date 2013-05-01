@@ -10,11 +10,12 @@ class ResponsesController < ApplicationController
   end
 
   def create
-    # This is where we create the current_users response to the question asked
-    @response = Response.new(params[:response])
+    # This is where we create the current_users response to the question asked 
+    @response = current_user.responses.build(params[:response])
     if @response.save
       flash[:notice] = "Your response was recorded"
       respond_with(@response)
+      puts @response.inspect
     else
       flash[:error] = "Something went wrong, please try again"
       render :new
