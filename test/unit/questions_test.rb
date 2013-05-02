@@ -8,5 +8,4 @@ class QuestionTest < ActiveSupport::TestCase
     question = QuestionFactory.question
     assert_equal 1, Question.count
   end
-  
 end

@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(:version => 20130501163758) do
     t.integer  "user_id"
     t.integer  "question_id"
     t.boolean  "correct"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.boolean  "value"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.boolean  "user_response"
   end
 
   create_table "users", :force => true do |t|

@@ -6,9 +6,9 @@ class ResponsesControllerTest < ActionController::TestCase
     assert_equal 0, Response.count
     user = User.create!(name: 'bob')
     session[:user_id] = user.id
-    question = Question.create!(statement: 'Tower Bridge is the oldest in London', fact_or_fiction: 'fact')
+    question = Question.create!(statement: 'Tower Bridge is the oldest in London', fact_or_fiction: 'true')
 
-    post :create, {response: {question_id: question.id, user_id: session[:user_id] }}, {user_id: user.id}
+    post :create, {response: {question_id: question.id, user_id: session[:user_id], user_response: true  }}, {user_id: user.id}
     assert_equal 1, Response.count
     assert_response :redirect
   end
