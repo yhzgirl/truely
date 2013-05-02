@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_filter proc { |controller| (controller.action_has_layout = false) if controller.request.xhr? }
 
   def authorized
-    redirect_to root_path, :alert => "You need to be signed in to add a question" unless current_user
+    redirect_to root_path, :alert => "Please sign in to complete this request" unless current_user
   end
 
     def current_user

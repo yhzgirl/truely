@@ -10,6 +10,6 @@ class ResponsesControllerTest < ActionController::TestCase
 
     post :create, {response: {question_id: question.id, user_id: session[:user_id], user_response: true  }}, {user_id: user.id}
     assert_equal 1, Response.count
-    assert_response :redirect
+    assert_response :success
   end
 end
