@@ -35,5 +35,4 @@ $(function() {
       $('.row-fluid').prepend('<div class="alert alert-success fade in ">' + close_btn + 'Thank you for adding to London Fact or Fiction</div>');
     }); 
   });
-
 });

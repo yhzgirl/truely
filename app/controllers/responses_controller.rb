@@ -15,7 +15,10 @@ class ResponsesController < ApplicationController
     params[:commit] == 'true' ? @response.user_response = true : @response.user_response = false
     @response.correct = @response.is_correct?
     if @response.save
-      render :show
+      respond_to do |format|
+        format.html { render :show }
+        format.json
+      end
     else
       flash[:error] = "Something went wrong, please try again"
       render :new
