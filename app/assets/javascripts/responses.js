@@ -7,7 +7,7 @@ function isLoggedIn() {
 }
 
 $(function() {
-  $(document).on('click', "#start_new_game, .next-question", function(e) {
+  $(document).on('click', "#start_new_game", function(e) {
     e.preventDefault();
     $('.alert').alert('close');
     // start our Ajax here to load questions/new which renders a new question form
@@ -19,4 +19,14 @@ $(function() {
       $('.row-fluid').prepend('<div class="alert alert-error fade in ">' + close_btn + 'You need to be logged in to play</div>');
     }
   });
+
+
+  $(document).on('click', "#fiction, #fact", function(e) {
+    e.preventDefault();
+    var response = $(this).attr('id');
+    var question_id = $('input[name="response[question_id]"]').val();
+    $.post('/responses',
+
+    });
+
 });
