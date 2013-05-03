@@ -28,9 +28,12 @@ $(function() {
           {question: {statement: question, fact_or_fiction: tf} }, 'json' )
     .success( function(data) {
       console.log(data);
-      $("#main-page").load("/questions");
+
+      $("#main-page").load("/");
+      // simulate the flash message
+      var close_btn = '<button type="button" class="close" data-dismiss="alert"><i class="icon-remove-sign"></i></button>'
+      $('.row-fluid').prepend('<div class="alert alert-success fade in ">' + close_btn + 'Thank you for adding to London Fact or Fiction</div>');
     }); 
   });
 
 });
-

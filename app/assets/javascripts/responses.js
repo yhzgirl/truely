@@ -7,7 +7,7 @@ function isLoggedIn() {
 }
 
 $(function() {
-  $(document).on('click', "#start_new_game", function(e) {
+  $(document).on('click', "#start_new_game, .next-question", function(e) {
     e.preventDefault();
     $('.alert').alert('close');
     // start our Ajax here to load questions/new which renders a new question form
