@@ -17,7 +17,6 @@ class ResponsesController < ApplicationController
     if @response.save
       respond_to do |format|
         format.html { render :show }
-        format.json
       end
     else
       flash[:error] = "Something went wrong, please try again"

@@ -7,7 +7,7 @@ function isLoggedIn() {
 }
 
 $(function() {
-  $(document).on('click', "#start_new_game", function(e) {
+  $(document).on('click', "#start_new_game, .next-question", function(e) {
     e.preventDefault();
     $('.alert').alert('close');
     // start our Ajax here to load questions/new which renders a new question form
@@ -23,10 +23,15 @@ $(function() {
 
   $(document).on('click', "#fiction, #fact", function(e) {
     e.preventDefault();
-    var response = $(this).attr('id');
+    var response = $(this).val();
+    console.log(response);
     var question_id = $('input[name="response[question_id]"]').val();
     $.post('/responses',
-
+          {response: {question_id: question_id, user_response: response } }, 'json'
+          )
+    .success( function(data) {
+      console.log(data);
+      $("#main-page").html(data);
     });
-
+  });
 });
