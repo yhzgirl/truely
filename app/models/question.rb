@@ -19,6 +19,16 @@ class Question < ActiveRecord::Base
     Question.first(order: 'RANDOM()')
   end
 
+  # # def self.random_question
+  # #   # Question.first(order: 'RANDOM()')
+  # #   askable_questions = get_current_users_outstanding_questions
+  # #   # askable_questions.first(order: 'RANDOM()')
+  # # end
+
+  # def self.get_random_outstanding_question_for_current_user
+  #   self.find_by_sql("SELECT * FROM questions WHERE id NOT IN (SELECT question_id FROM responses WHERE user_id = 1) ORDER BY RANDOM() LIMIT 1;")#.first(order: 'RANDOM()')
+  # end
+
   private
 
     def downcase_statement
