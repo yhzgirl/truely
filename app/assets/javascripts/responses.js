@@ -34,4 +34,10 @@ $(function() {
       $("#main-page").html(data);
     });
   });
+
+// End the game
+  $(document).on('click', ".end-game", function(e) {
+    e.preventDefault();
+    $("#main-page").load("/");
+  });
 });
