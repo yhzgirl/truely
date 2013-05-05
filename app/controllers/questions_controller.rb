@@ -15,10 +15,10 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = Question.new(params[:question])
+    @question = current_user.questions.build(params[:question])
     if @question.save
       flash[:notice] = "Your question was added"
-      respond_with(@question)
+      redirect_to root_path
     else
       flash[:error] = "Something went wrong, please try again"
       render :new

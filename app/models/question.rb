@@ -1,8 +1,9 @@
 class Question < ActiveRecord::Base
-  attr_accessible :statement, :fact_or_fiction
+  attr_accessible :statement, :fact_or_fiction, :user_id
 
   has_many :responses
-  has_many :users, through: :responses  
+  has_many :users, through: :responses
+  belongs_to :user 
 
   before_validation :downcase_statement 
 
