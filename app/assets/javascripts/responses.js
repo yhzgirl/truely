@@ -27,7 +27,7 @@ $(function() {
     console.log(response);
     var question_id = $('input[name="response[question_id]"]').val();
     $.post('/responses',
-          {response: {question_id: question_id, user_response: response } }, 'json'
+          {response: {question_id: question_id}, commit: response }, 'json'
           )
     .success( function(data) {
       console.log(data);
