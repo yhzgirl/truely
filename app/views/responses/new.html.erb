@@ -1,6 +1,10 @@
 <div class="flash-card">
-  <h2>Is this fact or fiction?</h2>
-  <br>
+  <% unless @question.nil? %>
+    <h2>Is this fact or fiction?</h2>
+    <br>
 
-  <%= render 'form' %>
+    <%= render 'form' %>
+  <% else %>
+    <h2>There are no more statements to you to assert as Fact or Fiction!</h2>
+  <% end %>
 </div>
