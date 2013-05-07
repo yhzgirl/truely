@@ -18,4 +18,14 @@ class ResponseTest < ActiveSupport::TestCase
     assert_equal 2, user_has_answered
   end
 
+  test 'can determine number of responses which are correct' do
+    user = User.create!(name: 'bob')
+    response = ResponseFactory.correct_response(:user_id => user.id)
+    response2 = ResponseFactory.correct_response(:user_id => user.id)
+    response3 = ResponseFactory.incorrect_response(:user_id => user.id)
+    response4 = ResponseFactory.incorrect_response(:user_id => user.id)
+    correctly_answered = Response.num_correctly_answered(user)
+    assert_equal 2, correctly_answered
+  end
+
 end

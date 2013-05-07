@@ -14,4 +14,8 @@ class Response < ActiveRecord::Base
   def self.num_questions_answered(user)
     Response.find_all_by_user_id(user).count
   end
+
+  def self.num_correctly_answered(user)
+    Response.find_all_by_user_id_and_correct(user, true).count
+  end
 end

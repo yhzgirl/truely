@@ -4,7 +4,8 @@ class ResponseFactory
   def self.correct_response(params={})
     question = QuestionFactory.question    
     params[:question_id] = question.id
-    params[:user_response] = true    
+    params[:user_response] = true
+    params[:correct] = true  
     Response.create!(params)
   end
 
@@ -12,7 +13,7 @@ class ResponseFactory
     question = QuestionFactory.question
     params[:question_id] = question.id 
     params[:user_response] = false
+    params[:correct] = false    
     Response.create!(params)
   end
-
 end
