@@ -63,7 +63,9 @@ div.background-img {
 
 .flash-card {
   display: inline-block;
-  position: relative;  
+  position: relative;
+  max-width: 50%;
+  min-width: 50%;  
 }
 
 .flash-card::before
