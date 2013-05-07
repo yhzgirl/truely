@@ -9,7 +9,8 @@ function isLoggedIn() {
 $(function() {
   $(document).on('click', "#start_new_game, .next-question", function(e) {
     e.preventDefault();
-    $('.alert').alert('close');
+    // $(".alert").alert('close');
+    $(".alert").remove();
     // start our Ajax here to load questions/new which renders a new question form
     if (isLoggedIn()) {
       $("#main-page").load("/responses/new");
@@ -23,6 +24,7 @@ $(function() {
 
   $(document).on('click', "#fiction, #fact", function(e) {
     e.preventDefault();
+    $('.alert').alert('close');
     var response = $(this).val();
     console.log(response);
     var question_id = $('input[name="response[question_id]"]').val();
