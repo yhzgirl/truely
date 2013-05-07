@@ -10,7 +10,7 @@ class Question < ActiveRecord::Base
   validates :statement, presence: true
   validates :statement, length: { minimum: 5, maximum: 255 }
   validates :statement, uniqueness: { case_sensitive: true }
-  validates :fact_or_fiction, presence: true
+  # validates :fact_or_fiction, presence: true
 
   # Used by will_paginate to set no. users per page
   self.per_page = 15
@@ -35,6 +35,10 @@ class Question < ActiveRecord::Base
                      ]
   end
 
+  def self.questions_available_for_user(user)
+    Question.where("user_id != #{user.id}").count
+  end
+  
   private
 
     def downcase_statement

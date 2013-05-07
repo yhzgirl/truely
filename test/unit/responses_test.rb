@@ -8,5 +8,4 @@ class ResponseTest < ActiveSupport::TestCase
     user_response = ResponseFactory.correct_response
     assert_equal true, user_response.is_correct?
   end
-  
 end

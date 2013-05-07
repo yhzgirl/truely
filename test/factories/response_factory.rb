@@ -15,5 +15,3 @@ class ResponseFactory
     Response.create!(params)
   end
 end
-
-
