@@ -10,4 +10,8 @@ class Response < ActiveRecord::Base
   def is_correct?
     user_response == Question.find(question_id).fact_or_fiction
   end
+
+  def self.num_questions_answered(user)
+    Response.find_all_by_user_id(user).count
+  end
 end
