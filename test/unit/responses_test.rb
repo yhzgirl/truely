@@ -28,4 +28,14 @@ class ResponseTest < ActiveSupport::TestCase
     assert_equal 2, correctly_answered
   end
 
+  test 'calculate percentage of correctly answered questions' do
+    user = User.create!(name: 'bob')
+    response = ResponseFactory.correct_response(:user_id => user.id)
+    response2 = ResponseFactory.correct_response(:user_id => user.id)
+    response3 = ResponseFactory.incorrect_response(:user_id => user.id)
+    response4 = ResponseFactory.incorrect_response(:user_id => user.id)
+    percentage_correctly_answered = Response.percentage_correctly_answered(user)
+    assert_equal 50, percentage_correctly_answered   
+  end
+
 end
