@@ -36,7 +36,7 @@ class Question < ActiveRecord::Base
   end
 
   def self.questions_available_for_user(user)
-    Question.where("user_id != #{user.id}").count
+    Question.where("user_id != ?", user.id).count
   end
   
   private
