@@ -6,7 +6,7 @@ class ResponsesController < ApplicationController
 
   def new
     @response = Response.new
-    @question = Question.random_question
+    @question = Question.get_random_outstanding_question_not_created_by(current_user).first
   end
 
   def create
