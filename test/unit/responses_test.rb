@@ -33,4 +33,12 @@ class ResponseTest < ActiveSupport::TestCase
     assert_equal 50, percentage_correctly_answered   
   end
 
+  test 'calculate percentage of available questions answered' do
+    questions = QuestionFactory.questions(nil, 4)
+    puts questions.inspect
+    # questions_user_has_available = Question.questions_available_for_user(@user)
+    percent_answered = Response.percent_of_available_questions_answered(@user)
+    assert_equal 10, percent_answered
+  end
+
 end
