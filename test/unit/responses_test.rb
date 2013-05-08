@@ -30,13 +30,24 @@ class ResponseTest < ActiveSupport::TestCase
 
   test 'calculate percentage of correctly answered questions' do
     percentage_correctly_answered = Response.percentage_correctly_answered(@user)
-    assert_equal 50, percentage_correctly_answered   
+    assert_equal "50", percentage_correctly_answered   
   end
 
-  test 'calculate percentage of available qustions answered' do
+  test 'calculate percentage of correctly answered questions when 0 answered' do
+    fred = User.create!(name: 'fred')
+    percentage_correctly_answered = Response.percentage_correctly_answered(fred)
+    assert_equal "0", percentage_correctly_answered
+  end
+
+  test 'calculate percentage of available questions answered' do
     questions = QuestionFactory.questions(nil, 4)
     percent_answered = Response.percentage_available_questions_answered(@user)
-    assert_equal 50.0, percent_answered
+    assert_equal "50", percent_answered
   end
 
+  test 'calculate percentage of unanswered questions when 0 answered' do
+    fred = User.create!(name: 'fred')
+    percent_answered = Response.percentage_available_questions_answered(fred)
+    assert_equal "0", percent_answered
+  end
 end
