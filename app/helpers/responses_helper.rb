@@ -8,5 +8,8 @@ module ResponsesHelper
     sprintf('%.0f', @user_stat)
   end
 
-  
+  def answered_statistics
+    @user_answered_stat = Response.percentage_available_questions_answered(current_user)
+    sprintf('%.0f', @user_answered_stat)
+  end
 end

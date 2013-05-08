@@ -91,3 +91,9 @@ div.background-img {
 .flash-card h2 {
   padding: 0 20px 0 20px;
 }
+
+@media all and (max-width: 979px) {
+  body {
+    padding-top: 0;
+  }
+}
