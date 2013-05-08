@@ -21,9 +21,8 @@ class QuestionsController < ApplicationController
       redirect_to root_path
     else
       flash[:error] = "Something went wrong, please try again"
-      puts "Houston, We have a PROBLEM!"
       respond_to do |format|
-        format.html { render :new, :error => "HA HA, Something went wrong, please try again." }
+        format.html { render :new, :error => "Something went wrong, please try again." }
         format.json { render :json => { :error => ""}, :status => 422 }
       end   
     end
