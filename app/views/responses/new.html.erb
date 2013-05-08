@@ -2,12 +2,10 @@
   <% unless @question.nil? %>
     <h2>Is this fact or fiction?</h2>
     <br>
-
     <%= render 'form' %>
   <% else %>
     <h2>You completed London Fact or Fiction!</h2>
-    <h3>feel free to add your own
+    <h3>(feel free to add your own)
     </h3>
   <% end %>
-  <%= render 'statistics' %>
 </div>

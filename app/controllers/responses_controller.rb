@@ -12,7 +12,7 @@ class ResponsesController < ApplicationController
   def create
     # This is where we create the current_users response to the question asked 
     @response = current_user.responses.build(params[:response])
-    params[:commit] == 'true' ? @response.user_response = true : @response.user_response = false
+    params[:commit] == 'Fact' ? @response.user_response = true : @response.user_response = false
     @response.correct = @response.is_correct?
     if @response.save
       respond_to do |format|
