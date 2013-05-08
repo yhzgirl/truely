@@ -34,6 +34,10 @@ $(function() {
       // simulate the flash message
       var close_btn = '<button type="button" class="close" data-dismiss="alert"><i class="icon-remove-sign"></i></button>'
       $('.row-fluid').prepend('<div class="alert alert-success fade in ">' + close_btn + 'Thank you for adding to London Fact or Fiction</div>');
+    .fail(function(data){ 
+      var close_btn = '<button type="button" class="close" data-dismiss="alert"><i class="icon-remove-sign"></i></button>'
+      $('.row-fluid').prepend('<div class="alert alert-error fade in ">' + close_btn + 'There was a problem try again</div>');
+      });
     }); 
   });
 });
