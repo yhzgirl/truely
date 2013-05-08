@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
   
   before_filter :authorized, only: [:new, :create]
 
-  respond_to :html, :json
+  # respond_to :html, :json
 
   def index
     @questions = Question.paginate(page: params[:page])
@@ -21,7 +21,11 @@ class QuestionsController < ApplicationController
       redirect_to root_path
     else
       flash[:error] = "Something went wrong, please try again"
-      render :new
+      puts "Houston, We have a PROBLEM!"
+      respond_to do |format|
+        format.html { render :new, :error => "HA HA, Something went wrong, please try again." }
+        format.json { render :json => { :error => ""}, :status => 422 }
+      end   
     end
   end
 

@@ -27,17 +27,18 @@ $(function() {
     var question = $('#question_statement').val();
     var tf = $('input[name="question[fact_or_fiction]"]:checked').val();
     $.post('/questions',
-          {question: {statement: question, fact_or_fiction: tf} }, 'json' 
+          {question: {statement: question, fact_or_fiction: tf} }, null, 'json' 
           )
     .success( function(data) {
       $("#main-page").load("/");
       // simulate the flash message
       var close_btn = '<button type="button" class="close" data-dismiss="alert"><i class="icon-remove-sign"></i></button>'
       $('.row-fluid').prepend('<div class="alert alert-success fade in ">' + close_btn + 'Thank you for adding to London Fact or Fiction</div>');
-    .fail(function(data){ 
+    })
+    .fail(function(data) { 
+      console.log(data);
       var close_btn = '<button type="button" class="close" data-dismiss="alert"><i class="icon-remove-sign"></i></button>'
       $('.row-fluid').prepend('<div class="alert alert-error fade in ">' + close_btn + 'There was a problem try again</div>');
-      });
     }); 
   });
 });
