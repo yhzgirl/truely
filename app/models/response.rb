@@ -23,4 +23,8 @@ class Response < ActiveRecord::Base
     # need to use .to_f on the denominator to get a non-zero value from the division
     ( num_correctly_answered(user) / num_questions_answered(user).to_f ) * 100 
   end
+
+  def self.percent_of_available_questions_answered(user)
+    ( num_questions_answered(user) / Question.questions_available_for_user(user).to_f ) * 100 
+  end
 end
