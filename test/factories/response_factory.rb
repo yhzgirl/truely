@@ -13,7 +13,7 @@ class ResponseFactory
     question = QuestionFactory.question
     params[:question_id] = question.id 
     params[:user_response] = false
-    params[:correct] = false    
+    params[:correct] = false
     Response.create!(params)
   end
 end

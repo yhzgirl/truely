@@ -10,7 +10,6 @@ class Question < ActiveRecord::Base
   validates :statement, presence: true
   validates :statement, length: { minimum: 5, maximum: 255 }
   validates :statement, uniqueness: { case_sensitive: true }
-  # validates :fact_or_fiction, presence: true
   validates :fact_or_fiction, inclusion: { in: [true, false] }
 
   # Used by will_paginate to set no. users per page

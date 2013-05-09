@@ -5,7 +5,7 @@ class Response < ActiveRecord::Base
   belongs_to :user
   belongs_to :question
 
-  # validates :user_response, presence: true
+  validates :user_response, inclusion: { in: [true, false] }
 
   def is_correct?
     user_response == Question.find(question_id).fact_or_fiction
