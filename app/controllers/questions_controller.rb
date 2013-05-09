@@ -18,7 +18,11 @@ class QuestionsController < ApplicationController
     @question = current_user.questions.build(params[:question])
     if @question.save
       flash[:notice] = "Your question was added"
-      redirect_to root_path
+      respond_to do |format| 
+        format.html { redirect_to root_path }
+        format.json { render json: @question, status: :created }
+      end
+
     else
       flash[:error] = "Something went wrong, please try again"
       if @question.errors.any?
