@@ -9,7 +9,7 @@ function isLoggedIn() {
 $(function() {
   $(document).on('click', "#add_fact_or_fiction", function(e) {
     e.preventDefault();
-    $('.alert').alert('close');
+    // $('.alert').alert('close');
     $('.alert').remove();
     // start our Ajax here to load questions/new which renders a new question form
     if (isLoggedIn()) {
@@ -23,7 +23,8 @@ $(function() {
 
   $(document).on('click', "#btn-add-question", function(e) {
     e.preventDefault();
-    $('.alert').alert('close');
+    // $('.alert').alert('close');
+    $('.alert').remove();
     var question = $('#question_statement').val();
     var tf = $('input[name="question[fact_or_fiction]"]:checked').val();
     $.post('/questions',
@@ -39,10 +40,6 @@ $(function() {
       var errors = JSON.parse(data.responseText);
       var error_msg = errors.error.statement.join(' and ');
       var statement_msg = 'Statement ' + error_msg;
-      console.log(errors);
-      console.log(statement_msg);
-      // console.log(errors.error);
-      // console.log(errors.error.statement.join(', '));
 
       var close_btn = '<button type="button" class="close" data-dismiss="alert"><i class="icon-remove-sign"></i></button>'
       $('.row-fluid').prepend('<div class="alert alert-error fade in ">' + close_btn + 'There was a problem, ' + statement_msg + '</div>');
