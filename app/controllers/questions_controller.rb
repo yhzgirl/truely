@@ -2,8 +2,6 @@ class QuestionsController < ApplicationController
   
   before_filter :authorized, only: [:new, :create]
 
-  # respond_to :html, :json
-
   def index
     @questions = Question.paginate(page: params[:page])
     # this is now in application controller as a proc so its system wide for AJAX (xhr) calls
@@ -22,12 +20,8 @@ class QuestionsController < ApplicationController
         format.html { redirect_to root_path }
         format.json { render json: @question, status: :created }
       end
-
     else
-      flash[:error] = "Something went wrong, please try again"
-      if @question.errors.any?
-        puts @question.errors.messages
-      end
+      flash.now[:error] = "Something went wrong, please try again" unless request.xhr?
       respond_to do |format|
         format.html { render :new, :error => "Something went wrong, please try again." }
         format.json { render :json => { :error => @question.errors.messages}, :status => 422 }
