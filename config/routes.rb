@@ -1,8 +1,9 @@
 TruelyIsThatRight::Application.routes.draw do
 
-  resources :responses
-  # get "responses/new"
-  # post "responses"
+  # get "responses/new", as: 'new_response'
+  # post 'responses' => 'responses#create'
+
+  resources :responses, :only => [:new, :create]
 
   resources :questions
 
