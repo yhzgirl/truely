@@ -6,7 +6,7 @@ http://do-you-know-london.herokuapp.com/
 
 For this Ruby on Rails project the following technologies are demonstrated:
 
-- Bootstrap
+- Twitter Bootstrap
 
 - Facebook authorisation with OAuth
 
